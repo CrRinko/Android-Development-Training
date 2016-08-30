@@ -1,1 +1,1 @@
-include ':Helloworld', ':logcat'
+include ':Helloworld', ':logcat', ':components'
