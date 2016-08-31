@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="name_list">
+        <item>Alan</item>
+        <item>Tom</item>
+        <item>Jack</item>
+    </string-array>
+    <string-array name="class_list">
+        <item>Class 1</item>
+        <item>Class 2</item>
+        <item>Class 3</item>
+    </string-array>
+    <string-array name="id_list">
+        <item>2014011001</item>
+        <item>2014011002</item>
+        <item>2014011003</item>
+    </string-array>
+</resources>
