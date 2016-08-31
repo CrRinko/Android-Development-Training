@@ -8,5 +8,15 @@
     tools:context="cn.aurora_x.android.secondactivity.MainActivity">
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch to Another activity"
+        android:id="@+id/btn_switch"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:onClick="onSwitchClicked"/>
 </RelativeLayout>
