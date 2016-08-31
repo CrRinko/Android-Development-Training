@@ -1,1 +1,1 @@
-include ':Helloworld', ':logcat', ':components', ':listview', ':lifecycle', ':secondactivity'
+include ':Helloworld', ':logcat', ':components', ':listview', ':lifecycle', ':secondactivity', ':fragment'

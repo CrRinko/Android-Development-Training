@@ -7,17 +7,21 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
-
+    Intent intent;
+    String name;
+    Integer age;
+    EditText nameEdit,ageEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,13 +30,20 @@ public class Main2Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Intent intent=getIntent();
-        String name=intent.getStringExtra("Name");
-        int age=intent.getIntExtra("Age",0);
-        Toast.makeText(this,name+" "+age,Toast.LENGTH_SHORT).show();
+        intent = getIntent();
+        name = intent.getStringExtra("Name");
+        age = intent.getIntExtra("Age", 0);
+        nameEdit = (EditText) findViewById(R.id.et_name);
+        ageEdit = (EditText) findViewById(R.id.et_age);
+        nameEdit.setText(name);
+        ageEdit.setText(age.toString());
     }
 
-    public void onBackClicked(View view){
+    public void onBackClicked(View view) {
+        name=nameEdit.getText().toString();
+        String res=name+" "+ageEdit.getText().toString();
+        intent.putExtra("Result",res);
+        setResult(0,intent);
         finish();
     }
 }
