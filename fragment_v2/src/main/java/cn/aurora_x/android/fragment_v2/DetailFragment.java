@@ -3,7 +3,7 @@ package cn.aurora_x.android.fragment_v2;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,7 +100,7 @@ public class DetailFragment extends Fragment {
                     sample.setText("");
             }
         }
-        return inflater.inflate(R.layout.fragment_detail, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

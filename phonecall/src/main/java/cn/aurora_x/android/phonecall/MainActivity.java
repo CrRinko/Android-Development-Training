@@ -32,6 +32,6 @@ public class MainActivity extends AppCompatActivity {
             encodedPhonenumber = URLEncoder.encode(phonenumber, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();}
-        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + encodedPhonenumber)));
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + encodedPhonenumber)));
     }
 }

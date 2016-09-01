@@ -1,8 +1,8 @@
 package cn.aurora_x.android.fragment_v2;
 
 import android.net.Uri;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -18,16 +18,14 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentManager.enableDebugLogging(true);
-        fragmentTransaction = fragmentManager.beginTransaction();
     }
 
     @Override
     public void onListFragmentInteraction(WordContent.WordItem item) {
         DetailFragment fragment = DetailFragment.newInstance(item.id);
-        fragmentTransaction.replace(R.id.fragment_detail, fragment);
-        fragmentTransaction.commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_detail, fragment).commit();
     }
 
     @Override
