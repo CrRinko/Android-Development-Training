@@ -7,25 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cn.aurora_x.android.fragment_v2.MainActivity">
+    tools:context="cn.aurora_x.android.intent.MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
-        <fragment
+        <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:name="cn.aurora_x.android.fragment_v2.WordFragment"
-            android:id="@+id/fragment_list" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="cn.aurora_x.android.fragment_v2.DetailFragment"
-            android:id="@+id/fragment_detail" />
+            android:layout_height="wrap_content"
+            android:text="Action!"
+            android:id="@+id/btn_action"
+            android:onClick="onActionButtonClicked"/>
     </LinearLayout>
 </RelativeLayout>
