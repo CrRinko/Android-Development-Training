@@ -7,12 +7,13 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     SQLiteOpenHelper dbhelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbhelper=new WordsDBHelper(this);
-        SQLiteDatabase db=dbhelper.getReadableDatabase();
+        dbhelper = new WordsDBHelper(this);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
     }
 
     @Override
