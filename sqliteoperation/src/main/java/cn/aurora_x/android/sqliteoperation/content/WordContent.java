@@ -1,4 +1,4 @@
-package cn.aurora_x.android.sqliteoperation.words;
+package cn.aurora_x.android.sqliteoperation.content;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,12 +8,12 @@ import java.util.Map;
 import cn.aurora_x.android.sqliteoperation.WordsDBHelper;
 
 /**
- * Helper class for providing sample content for user interfaces created by
+ * Helper class for providing sample word for user interfaces created by
  * Android template wizards.
  * <p/>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class WordList {
+public class WordContent {
 
     /**
      * An array of sample (dummy) items.
@@ -34,12 +34,8 @@ public class WordList {
         ITEM_MAP.put(item.id, item);
     }
 
-    private static WordItem createWordItem(int position) {
-        return new WordItem(String.valueOf(position), "Item ");
-    }
-
     /**
-     * A dummy item representing a piece of content.
+     * A dummy item representing a piece of word.
      */
     public static class WordItem {
         public final String id;
@@ -49,7 +45,6 @@ public class WordList {
             this.id = id;
             this.word = word;
         }
-
         @Override
         public String toString() {
             return word;

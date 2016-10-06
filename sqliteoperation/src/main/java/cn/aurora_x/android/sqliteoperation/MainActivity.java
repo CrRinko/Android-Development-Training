@@ -1,26 +1,21 @@
 package cn.aurora_x.android.sqliteoperation;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-    SQLiteOpenHelper dbhelper;
-    SQLiteDatabase db;
+import cn.aurora_x.android.sqliteoperation.content.WordContent;
+
+public class MainActivity extends AppCompatActivity implements WordsFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbhelper = new WordsDBHelper(this);
-        db = dbhelper.getReadableDatabase();
+        WordsDBHelper dbHelper=new WordsDBHelper(this);
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        dbhelper.close();
-    }
+    public void onListFragmentInteraction(WordContent.WordItem item) {
 
+    }
 }

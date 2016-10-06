@@ -5,19 +5,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Rinko on 2016/9/2.
+ * Created by Rinko on 2016/9/28.
  */
 public class WordsDBHelper extends SQLiteOpenHelper {
-    private final static String DATABASE_NAME = "Data_words";
+    private final static String DATABASE_NAME = "wordsdb";
     private final static int DATABASE_VERSION = 1;
-    private final static String SQL_CREATE_TABLE =
-            "create table " + Words.Word.TABLE_NAME + "(" +
-                    Words.Word.COLUMN_NAME_ID + " integer primary key autoincrement," +
-                    Words.Word.COLUMN_NAME_WORD + " text," +
-                    Words.Word.COLUMN_NAME_MEANING + " text," +
-                    Words.Word.COLUMN_NAME_SAMPLE + " text)";
-    private final static String SQL_DROP_TABLE =
-            "drop table " + Words.Word.TABLE_NAME;
+    private final static String SQL_CREATE_DATABASE =
+            "CREATE TABLE " + Words.Word.TABLE_NAME + "("
+                    +Words.Word._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            +Words.Word.COLUMN_NAME_WORD + " TEXT,"
+            +Words.Word.COLUMN_NAME_MEANING + " TEXT,"
+            + Words.Word.COLUMN_NAME_SAMPLE + " TEXT" + " )";
+    private final static String SQL_DELETE_DATABASE = "DROP TABLE IF EXISTS " + Words.Word.TABLE_NAME;
 
     public WordsDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,12 +24,12 @@ public class WordsDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_TABLE);
+        db.execSQL(SQL_CREATE_DATABASE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(SQL_DROP_TABLE);
+        db.execSQL(SQL_DELETE_DATABASE);
         onCreate(db);
     }
 }

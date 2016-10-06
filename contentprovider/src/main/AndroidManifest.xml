@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".WordContentProvider"
+            android:authorities="cn.aurora-x.android.wordsprovider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>

@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cn.aurora_x.android.sqliteoperation.words.WordList;
-import cn.aurora_x.android.sqliteoperation.words.WordList.WordItem;
+import cn.aurora_x.android.sqliteoperation.content.WordContent;
+import cn.aurora_x.android.sqliteoperation.content.WordContent.WordItem;
 
 /**
  * A fragment representing a list of Items.
@@ -67,7 +67,7 @@ public class WordsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyWordsRecyclerViewAdapter(WordList.ITEMS, mListener));
+            recyclerView.setAdapter(new MyWordsRecyclerViewAdapter(WordContent.ITEMS, mListener));
         }
         return view;
     }
