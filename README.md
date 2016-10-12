@@ -23,7 +23,7 @@
 22. contacts [x]
 23. contentobserver [x]
 24. startservice [x]
-25. bindservice [ ]
+25. bindservice [x]
 26. --- [ ]
 27. --- [ ]
 28. mediaplayer [x]

@@ -8,6 +8,7 @@ import android.util.Log;
 
 public class MyService extends Service {
     private static final String TAG = "CRRINKO";
+    private LocalBinder myBinder = new LocalBinder();
     public class LocalBinder extends Binder{
         MyService getService(){
             return MyService.this;
@@ -25,14 +26,6 @@ public class MyService extends Service {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.v(TAG, "Service: onStartCommand()");
-        int num = intent.getIntExtra("num", 0);
-        Log.v(TAG, "num=" + num);
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Override
     public void onDestroy() {
         Log.v(TAG, "Service: onDestroy()");
         super.onDestroy();
@@ -41,6 +34,12 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.v(TAG,"Service: onBind()");
-        throw new UnsupportedOperationException("Not yet implemented");
+        return myBinder;
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.v(TAG, "Service: onUnbind()");
+        return super.onUnbind(intent);
     }
 }
