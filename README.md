@@ -28,4 +28,4 @@
 27. boradcast_receiver & boradcast_sender [x]
 28. mediaplayer [x]
 29. --- [ ]
-30. --- [ ]
+30. drawview [x]
