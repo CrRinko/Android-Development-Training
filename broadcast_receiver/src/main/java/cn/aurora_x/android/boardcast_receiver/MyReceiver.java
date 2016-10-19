@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 public class MyReceiver extends BroadcastReceiver {
     public static String msg = null;
-
+    private static Context msgContext = null;
     public MyReceiver() {
     }
 
@@ -16,7 +16,5 @@ public class MyReceiver extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         msg = intent.getStringExtra("msg");
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }
